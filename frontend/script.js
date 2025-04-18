@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:5000/api/todos";
+const apiUrl = "https://todo-iygb.onrender.com";
 
 async function fetchtodo() {
     try {
