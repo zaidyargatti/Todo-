@@ -2,7 +2,7 @@ const apiUrl = "https://todo-iygb.onrender.com";
 
 async function fetchtodo() {
     try {
-        const response = await fetch(`${apiUrl}/`);
+        const response = await fetch(`${apiUrl}/api/todos/`);
         if (!response.ok) {
             throw new Error("Failed to fetch todos");
         }
@@ -37,7 +37,7 @@ async function addTodo() {
             return;
         }
 
-        const response = await fetch(`${apiUrl}/`, {
+        const response = await fetch(`${apiUrl}/api/todos/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -71,7 +71,7 @@ async function editTodo(id, currentText) {
             return;
         }
 
-        const response = await fetch(`${apiUrl}/${id}`, {
+        const response = await fetch(`${apiUrl}/api/todos/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -94,7 +94,7 @@ async function editTodo(id, currentText) {
 
 async function deleteTodo(id) {
     try {
-        const response = await fetch(`${apiUrl}/${id}`, {
+        const response = await fetch(`${apiUrl}/api/todos/${id}`, {
             method: "DELETE"
         });
 
